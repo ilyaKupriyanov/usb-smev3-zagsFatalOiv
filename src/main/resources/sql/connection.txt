@@ -1,0 +1,8 @@
+#Postgres
+MRDFNSBroadcast.url=1.0.0.63
+MRDFNSBroadcast.username=fnsbroadcast
+MRDFNSBroadcast.password=abcd1234
+MRDFNSBroadcast.schema=fnsbroadcast
+MRDFNSBroadcast.connection.property.DatabaseName=fnsbroadcast
+MRDFNSBroadcast.connection.property.InitialConnections=5
+MRDFNSBroadcast.connection.property.MaxConnections=10

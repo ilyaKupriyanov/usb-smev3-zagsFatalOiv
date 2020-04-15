@@ -1,0 +1,54 @@
+<FATALOIVRequest><DataSved>2019-03-13</DataSved><IdSved>a</IdSved>
+    <SvedRegSmertOIV><DataVers>2018-12-15</DataVers><DataZapis>2018-12-15</DataZapis><NomerVers>1</NomerVers><NomerZapis>111111111111111111111</NomerZapis>
+        <OrganZAGS><KodZAGS>R0000000</KodZAGS><NaimZAGS>Федеральное Управление ЗАГС</NaimZAGS></OrganZAGS>
+        <StatusZapisi><DataNachStatus>2019-03-13</DataNachStatus><KodStatus>01</KodStatus><NaimStatus>запись акта первичная</NaimStatus></StatusZapisi>
+        <PrdSvedReg>
+            <SvedUmer><Pol>1</Pol>
+                <FIOUmer>
+                    <Familiya>Иванов</Familiya>
+                    <Imya>Иван</Imya>
+                    <Otchestvo>Иванович</Otchestvo>
+                </FIOUmer>
+                <DataRozhdKalend>1950-12-13</DataRozhdKalend>
+                <MestoRozhden><Gorod>Уфа</Gorod><KodStrany>643</KodStrany><MestoTekst>Российская Федерация г. Уфа, ул. Ленина, д. 1, кв. 1</MestoTekst><NaimStrany>Российская Федерация</NaimStrany><NaimSubekt>Республика Башкортостан</NaimSubekt><PriznMesto>1</PriznMesto><Region>02</Region></MestoRozhden>
+                <Grazhdanstvo><NaimStrany>Российская Федерация</NaimStrany><OKSM>643</OKSM></Grazhdanstvo>
+                <AdrMZH>
+                    <AdrMZHRF><AdrRFTekst>Российская Федерация г. Уфа, ул. Ленина, д. 1, кв. 1</AdrRFTekst><PrTipAdrRF>1</PrTipAdrRF>
+                        <AdrKLADR><Gorod>Уфа</Gorod><Dom>1</Dom><Indeks>111111</Indeks><Kvart>1</Kvart><KodRegion>02</KodRegion><Korpus>1</Korpus><NaimRegion>Республика Башкортостан</NaimRegion><Ulica>Ленина</Ulica></AdrKLADR>
+                    </AdrMZHRF>
+                </AdrMZH>
+                <DataSmertKalend>2018-12-14</DataSmertKalend>
+                <VremyaSmert>09:00:00</VremyaSmert>
+                <MestoSmert><Gorod>Уфа</Gorod><KodStrany>643</KodStrany><MestoTekst>Российская Федерация г. Уфа, ул. Ленина, д. 1, кв. 1</MestoTekst><NaimStrany>Российская Федерация</NaimStrany><NaimSubekt>Республика Башкортостан</NaimSubekt><PriznMesto>1</PriznMesto><Region>02</Region></MestoSmert>
+                <Nacionalnost>001</Nacionalnost>
+                <SemPolozh>01</SemPolozh>
+                <Obrazovanie>01</Obrazovanie>
+                <Zanyatost>01</Zanyatost>
+                <UdLichnFL><VydDok>a</VydDok><DataDok>1957-08-13</DataDok><KodVidDok>21</KodVidDok><NaimDok>Паспорт гражданина Российской Федерации</NaimDok><SerNomDok>55</SerNomDok></UdLichnFL>
+                <MestoNastSmert>01</MestoNastSmert>
+                <ObstoyatSmert>01</ObstoyatSmert>
+                <PrSrokSmertDTP>1</PrSrokSmertDTP>
+                <LicoPrichSmert>01</LicoPrichSmert>
+                <PrSvedVrach>1</PrSvedVrach>
+                <OsnPrichSmert>01</OsnPrichSmert>
+                <SvedPrichSmert><Zabolevanie>01</Zabolevanie>
+                    <SvPrichSmertMKB><KodPrichSmert>G93.6</KodPrichSmert><PrichSmert>отек головного мозга</PrichSmert></SvPrichSmertMKB>
+                </SvedPrichSmert>
+            </SvedUmer>
+            <SvedDokSmert><DataDok>2017-08-13</DataDok><KodDok>17002</KodDok><NaimDok>Медицинское свидетельство о смерти</NaimDok><SerNomDok>аааа</SerNomDok></SvedDokSmert>
+        </PrdSvedReg>
+        <SvedZayavitelFL>
+            <FIOZayavitel>
+                <Familiya>Иванова</Familiya>
+                <Imya>Инна</Imya>
+                <Otchestvo>Петровна</Otchestvo>
+            </FIOZayavitel>
+            <AdrMZH>
+                <AdrMZHRF><AdrRFTekst>Российская Федерация г. Уфа, ул. Ленина, д. 1, кв. 1</AdrRFTekst><PrTipAdrRF>1</PrTipAdrRF>
+                    <AdrKLADR><Gorod>Уфа</Gorod><Dom>1</Dom><Indeks>111111</Indeks><Kvart>1</Kvart><KodRegion>02</KodRegion><Korpus>1</Korpus><NaimRegion>Республика Башкортостан</NaimRegion><Ulica>Ленина</Ulica></AdrKLADR>
+                </AdrMZHRF>
+            </AdrMZH>
+            <UdLichnFL><VydDok>a</VydDok><DataDok>1957-08-13</DataDok><KodVidDok>21</KodVidDok><NaimDok>Паспорт гражданина Российской Федерации</NaimDok><SerNomDok>55</SerNomDok></UdLichnFL>
+        </SvedZayavitelFL>
+    </SvedRegSmertOIV>
+</FATALOIVRequest>

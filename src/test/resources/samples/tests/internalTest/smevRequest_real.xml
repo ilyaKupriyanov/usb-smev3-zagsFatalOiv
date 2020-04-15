@@ -1,0 +1,107 @@
+<ns1:Request xmlns:ns1="urn://x-artefacts-zags-fataloiv/root/112-41/4.0.0" xmlns:directive="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/directive/1.3" xmlns:ns2="urn://x-artefacts-zags-fataloiv/types/4.0.0">
+    <directive:Registry>
+        <directive:RegistryRecord>
+            <directive:RecordId>12345</directive:RecordId>
+            <directive:Record Id="ID_1">
+                <directive:RecordContent Id="ID_2">
+                    <ns2:FATALOIVRequest ДатаСвед="2020-03-13"
+                                         ИдСвед="2ced52f3-5ec4-4e95-98d8-57e9946a7150">
+                        <ns2:СведРегСмертОИВ ДатаВерс="2020-03-12" ДатаЗапис="2020-03-12"
+                                             НомерВерс="0"
+                                             НомерЗапис="170209130000600755007">
+                            <ns2:ОрганЗАГС КодЗАГС="R1300006"
+                                           НаимЗАГС="Отдел регистрации смерти Управления записи актов гражданского состояния Администрации городского округа Саранск Республики Мордовия"/>
+                            <ns2:СтатусЗаписи ДатаНачСтатус="2020-03-12" КодСтатус="01"
+                                              НаимСтатус="Запись акта первичная"/>
+                            <ns2:СведСвидет ДатаВыдСвидет="2020-03-12" НомерСвидет="687409"
+                                            СерияСвидет="II-ЖК"/>
+                            <ns2:ПрдСведРег>
+                                <ns2:СведУмер Пол="2">
+                                    <ns2:ФИОУмер>
+                                        <ns2:Фамилия>Антонова</ns2:Фамилия>
+                                        <ns2:Имя>Мария</ns2:Имя>
+                                        <ns2:Отчество>Николаевна</ns2:Отчество>
+                                    </ns2:ФИОУмер>
+                                    <ns2:ДатаРождКаленд>1926-08-24</ns2:ДатаРождКаленд>
+                                    <ns2:МестоРожден
+                                            МестоТекст="Мордовская АССР,Рузаевский район,с.Левжа"
+                                            ОКТМО="89701000001" ПризнМесто="1"/>
+                                    <ns2:Гражданство НаимСтраны="Российская Федерация"
+                                                     ОКСМ="643"/>
+                                    <ns2:АдрМЖ>
+                                        <ns2:АдрМЖРФ
+                                                АдрРФТекст="Российская Федерация, Респ Мордовия, г Саранск, ул Пролетарская, д.75, кв.15, "
+                                                ОКТМО="89701000001" ПрТипАдрРФ="1">
+                                            <ns2:АдрКЛАДР Город="г Саранск" Дом="75"
+                                                          Кварт="15" КодРегион="13"
+                                                          НаимРегион="Респ Мордовия"
+                                                          Улица="ул Пролетарская"/>
+                                        </ns2:АдрМЖРФ>
+                                    </ns2:АдрМЖ>
+                                    <ns2:ДатаСмертКаленд>2020-03-01</ns2:ДатаСмертКаленд>
+                                    <ns2:ВремяСмерт>01:00:00.000+03:00</ns2:ВремяСмерт>
+                                    <ns2:МестоСмерт Город="г Саранск"
+                                                    МестоТекст="Российская Федерация, Респ Мордовия, г Саранск"
+                                                    НаимСубъект="Респ Мордовия"
+                                                    ОКТМО="89701000001" ПризнМесто="1"
+                                                    Регион="13"/>
+                                    <ns2:ПрНациональность>1</ns2:ПрНациональность>
+                                    <ns2:СемПолож>01</ns2:СемПолож>
+                                    <ns2:Образование>01</ns2:Образование>
+                                    <ns2:Занятость>06</ns2:Занятость>
+                                    <ns2:УдЛичнФЛ ВыдДок="Ленинским РОВД гор.Саранска"
+                                                  ДатаДок="2001-12-28" КодВидДок="21"
+                                                  НаимДок="Паспорт гражданина Российской Федерации"
+                                                  СерНомДок="89 01 185702"/>
+                                    <ns2:МестоНастСмерт>04</ns2:МестоНастСмерт>
+                                    <ns2:ОбстоятСмерт>01</ns2:ОбстоятСмерт>
+                                    <ns2:ПрСрокСмертДТП>1</ns2:ПрСрокСмертДТП>
+                                    <ns2:ЛицоПричСмерт>05</ns2:ЛицоПричСмерт>
+                                    <ns2:ПрСведВрач>1</ns2:ПрСведВрач>
+                                    <ns2:ОснПричСмерт>04</ns2:ОснПричСмерт>
+                                    <ns2:СведПричСмерт Заболевание="01">
+                                        <ns2:СвПричСмертПроизв КодПричСмертПроизв="R64.0"
+                                                               ПричСмертПроизв="раковая кахексия"/>
+                                    </ns2:СведПричСмерт>
+                                    <ns2:СведПричСмерт Заболевание="02">
+                                        <ns2:СвПричСмертПроизв КодПричСмертПроизв="C32.9"
+                                                               ПричСмертПроизв="злокачественное новообразование гортани с метастазами во внутренние органы"/>
+                                    </ns2:СведПричСмерт>
+                                </ns2:СведУмер>
+                                <ns2:СведДокСмерт ДатаДок="2020-03-02" КодДок="17002"
+                                                  НаимДок="Медицинское свидетельство о смерти"
+                                                  СерНомДок="89 005301">
+                                    <ns2:НаимОрг>ГКУЗ Республики Мордовия РБСМЭ "Саранское
+                                        судебно-медицинское отделение исследования трупов",
+                                        г.Саранск
+                                    </ns2:НаимОрг>
+                                </ns2:СведДокСмерт>
+                            </ns2:ПрдСведРег>
+                            <ns2:СведЗаявительФЛ>
+                                <ns2:ФИОЗаявитель>
+                                    <ns2:Фамилия>Антонова</ns2:Фамилия>
+                                    <ns2:Имя>Наднжда</ns2:Имя>
+                                    <ns2:Отчество>Евгеньевна</ns2:Отчество>
+                                </ns2:ФИОЗаявитель>
+                                <ns2:АдрМЖ>
+                                    <ns2:АдрМЖРФ
+                                            АдрРФТекст="Российская Федерация, г Москва, ул Щербаковская, д.35, кв.201, "
+                                            ОКТМО="45314000" ПрТипАдрРФ="1">
+                                        <ns2:АдрКЛАДР Дом="35" Кварт="201" КодРегион="77"
+                                                      НаимРегион="г Москва"
+                                                      Улица="ул Щербаковская"/>
+                                    </ns2:АдрМЖРФ>
+                                </ns2:АдрМЖ>
+                                <ns2:УдЛичнФЛ ВыдДок="ОВД Ленинского района города Саранска"
+                                              ДатаДок="2006-04-05" КодВидДок="21"
+                                              НаимДок="Паспорт гражданина Российской Федерации"
+                                              СерНомДок="89 05 927508"/>
+                            </ns2:СведЗаявительФЛ>
+                        </ns2:СведРегСмертОИВ>
+                    </ns2:FATALOIVRequest>
+                </directive:RecordContent>
+            </directive:Record>
+            <directive:RecordSignature><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411"/><ds:Reference URI="#ID_1"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:Transform Algorithm="urn://smev-gov-ru/xmldsig/transform"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411"/><ds:DigestValue>8L9CEocU5jIdqLJyboFzBEjHK1NKXoqLb0HeZa7AOU0=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>C4CnwsCNEPdjZOtN34sPeoeen+cJpKhF7jK9tJq8tqh+Um/VDOs4/C3JmaGFCxForKsfDUyXMy1UZXOJ5NbYbg==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>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</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature></directive:RecordSignature>
+        </directive:RegistryRecord>
+    </directive:Registry>
+</ns1:Request>

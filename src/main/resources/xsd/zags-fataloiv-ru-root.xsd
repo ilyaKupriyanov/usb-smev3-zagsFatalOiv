@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by lic@gnivc.ru (AO GNIVC) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn://x-artefacts-zags-fataloiv/root/112-41/4.0.0" xmlns:fnst="urn://x-artefacts-zags-fataloiv/types/4.0.0" targetNamespace="urn://x-artefacts-zags-fataloiv/root/112-41/4.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn://x-artefacts-zags-fataloiv/types/4.0.0" schemaLocation="./commons/zags-fataloiv-types.xsd"/>
+		<xs:annotation>
+		<xs:documentation>-------------------------------------------------Обязательные элементы схемы ВС-------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="Request">
+		<xs:annotation>
+			<xs:documentation>Запрос. Реестровый тип данных (для директивных ВС)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any namespace="urn://x-artefacts-smev-gov-ru/services/message-exchange/types/directive/1.3" processContents="lax">
+					<xs:annotation>
+						<xs:documentation>Корневой элемент запроса присоединять сюда.</xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FATALOIVRequest">
+		<xs:annotation>
+			<xs:documentation>Запрос сведений о записях актов о смерти</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="СведРегСмертОИВ" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Сведения о государственной регистрации смерти для передачи органам исполнительной власти субъектов Российской Федерации</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ОрганЗАГС" type="fnst:ОрганЗАГСТип">
+								<xs:annotation>
+									<xs:documentation>Сведения об органе ЗАГС, которым произведена государственная регистрация смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="СтатусЗаписи">
+								<xs:annotation>
+									<xs:documentation>Сведения о статусе записи акта о смерти</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="ДатаНачСтатус" type="xs:date" use="required">
+										<xs:annotation>
+											<xs:documentation>Дата начала действия статуса</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="КодСтатус" use="required">
+										<xs:annotation>
+											<xs:documentation>Код статуса</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="fnst:digits-2">
+												<xs:enumeration value="01"/>
+												<xs:enumeration value="02"/>
+												<xs:enumeration value="03"/>
+												<xs:enumeration value="07"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="НаимСтатус" type="fnst:string-255" use="required">
+										<xs:annotation>
+											<xs:documentation>Наименование статуса</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СведСвидет" type="fnst:СведСвидетТип" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Сведения о выданном Свидетельстве о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ПовтСвидет" type="fnst:СведСвидетТип" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о повторно выданных Свидетельствах о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ПрдСведРег">
+								<xs:annotation>
+									<xs:documentation>Передаваемые сведения о государственной регистрации смерти</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="СведУмер">
+											<xs:annotation>
+												<xs:documentation>Сведения об умершем</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ФИОУмер" type="fnst:ФИОПрТип">
+														<xs:annotation>
+															<xs:documentation>Фамилия, имя, отчество умершего</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:choice>
+														<xs:element name="ПрДатаРожд">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о дате рождения умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ДатаРождКаленд" type="xs:date">
+															<xs:annotation>
+																<xs:documentation>Дата рождения (календарная дата)</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="ДатаРождДок" type="fnst:ДатаДокТип">
+															<xs:annotation>
+																<xs:documentation>Дата рождения по представленным документам</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрМестоРожден">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о месте рождения умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="МестоРожден" type="fnst:МестоТип">
+															<xs:annotation>
+																<xs:documentation>Место рождения</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрГражданство">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о гражданстве</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="Гражданство" type="fnst:ГражданствоТип">
+															<xs:annotation>
+																<xs:documentation>Сведения о гражданстве</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрАдрМЖ">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений об адресе места жительства</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="АдрМЖ" type="fnst:АдрМЖТип">
+															<xs:annotation>
+																<xs:documentation>Адрес места жительства</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрДатаСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о дате смерти умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ДатаСмертКаленд" type="xs:date">
+															<xs:annotation>
+																<xs:documentation>Дата смерти (календарная дата)</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="ДатаСмертДок" type="fnst:ДатаДокТип">
+															<xs:annotation>
+																<xs:documentation>Дата смерти по представленным документам</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрВремяСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о времени смерти умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ВремяСмерт" type="xs:time">
+															<xs:annotation>
+																<xs:documentation>Время смерти</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрМестоСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о месте смерти умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="МестоСмерт" type="fnst:МестоТип">
+															<xs:annotation>
+																<xs:documentation>Место смерти</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрНациональность">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о национальности</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="Национальность" type="fnst:digits-3">
+															<xs:annotation>
+																<xs:documentation>Национальность</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрСемПолож">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о семейном положении</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="СемПолож">
+															<xs:annotation>
+																<xs:documentation>Семейное положение</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:digits-2">
+																	<xs:enumeration value="01"/>
+																	<xs:enumeration value="02"/>
+																	<xs:enumeration value="03"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрОбразование">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений об образовании</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="Образование">
+															<xs:annotation>
+																<xs:documentation>Образование</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-2">
+																	<xs:enumeration value="01"/>
+																	<xs:enumeration value="02"/>
+																	<xs:enumeration value="03"/>
+																	<xs:enumeration value="04"/>
+																	<xs:enumeration value="05"/>
+																	<xs:enumeration value="06"/>
+																	<xs:enumeration value="07"/>
+																	<xs:enumeration value="08"/>
+																	<xs:enumeration value="09"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрЗанятость">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о занятости</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="Занятость">
+															<xs:annotation>
+																<xs:documentation>Занятость</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-2">
+																	<xs:enumeration value="01"/>
+																	<xs:enumeration value="02"/>
+																	<xs:enumeration value="03"/>
+																	<xs:enumeration value="04"/>
+																	<xs:enumeration value="05"/>
+																	<xs:enumeration value="06"/>
+																	<xs:enumeration value="07"/>
+																	<xs:enumeration value="08"/>
+																	<xs:enumeration value="09"/>
+																	<xs:enumeration value="10"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрУдЛичнФЛ">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о документе, удостоверяющем личность</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="УдЛичнФЛ" type="fnst:УдЛичнФЛТип">
+															<xs:annotation>
+																<xs:documentation>Сведения о документе, удостоверяющем личность</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрМестоНастСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о месте наступления смерти</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="МестоНастСмерт">
+															<xs:annotation>
+																<xs:documentation>Место наступления смерти</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-2">
+																	<xs:enumeration value="01"/>
+																	<xs:enumeration value="02"/>
+																	<xs:enumeration value="03"/>
+																	<xs:enumeration value="04"/>
+																	<xs:enumeration value="05"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрОбстоятСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений об обстоятельствах смерти</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ОбстоятСмерт">
+															<xs:annotation>
+																<xs:documentation>Обстоятельства смерти</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-2">
+																	<xs:enumeration value="01"/>
+																	<xs:enumeration value="02"/>
+																	<xs:enumeration value="03"/>
+																	<xs:enumeration value="04"/>
+																	<xs:enumeration value="05"/>
+																	<xs:enumeration value="06"/>
+																	<xs:enumeration value="07"/>
+																	<xs:enumeration value="08"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрСрокСмертДТП">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о смерти в случае смерти в результате дорожно-транспортного происшествия</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="СрокСмертДТП">
+															<xs:annotation>
+																<xs:documentation>Срок смерти после дорожно-транспортного происшествия</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-2">
+																	<xs:enumeration value="01"/>
+																	<xs:enumeration value="02"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:choice>
+													<xs:element name="СведУмерРеб" type="fnst:СведУмерРеб" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Сведения о смерти ребенка, умершего в возрасте до года</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:choice>
+														<xs:element name="ПрЛицоПричСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о лице, установившем причину смерти</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ЛицоПричСмерт">
+															<xs:annotation>
+																<xs:documentation>Лицо, установившее причину смерти</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:digits-2">
+																	<xs:enumeration value="01"/>
+																	<xs:enumeration value="02"/>
+																	<xs:enumeration value="03"/>
+																	<xs:enumeration value="04"/>
+																	<xs:enumeration value="05"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрСведВрач">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о враче</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="СведВрач" type="fnst:СведВрач">
+															<xs:annotation>
+																<xs:documentation>Сведения о враче</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрОснПричСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений об основании, послужившем для установления причины смерти</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ОснПричСмерт">
+															<xs:annotation>
+																<xs:documentation>Основание, послужившее для установления причины смерти</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:digits-2">
+																	<xs:enumeration value="01"/>
+																	<xs:enumeration value="02"/>
+																	<xs:enumeration value="03"/>
+																	<xs:enumeration value="04"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:choice>
+													<xs:element name="СведПричСмерт" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Сведения о причинах смерти</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:choice>
+																<xs:element name="СвПричСмертМКБ">
+																	<xs:annotation>
+																		<xs:documentation>Сведения о причине смерти в соответствии со справочником МКБ-10</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:attribute name="КодПричСмерт" type="fnst:string-10" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Код причины смерти (по справочнику МКБ-10)</xs:documentation>
+																				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1005</xs:appinfo>
+																				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">МКБ10</xs:appinfo>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="ПричСмерт" type="fnst:string-255" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Наименование причины смерти</xs:documentation>
+																				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1005</xs:appinfo>
+																				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">МКБ10</xs:appinfo>
+																			</xs:annotation>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="СвПричСмертПроизв">
+																	<xs:annotation>
+																		<xs:documentation>Сведения о причине смерти (не справочные значения)</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:attribute name="КодПричСмертПроизв" type="fnst:string-10" use="optional">
+																			<xs:annotation>
+																				<xs:documentation>Код причины смерти (не по справочнику)</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="ПричСмертПроизв" type="fnst:string-255" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Наименование причины смерти (не по справочнику)</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:choice>
+															<xs:attribute name="Заболевание" use="required">
+																<xs:annotation>
+																	<xs:documentation>Заболевание или другие обстоятельства, послужившие причиной смерти</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="fnst:string-2">
+																		<xs:enumeration value="01"/>
+																		<xs:enumeration value="02"/>
+																		<xs:enumeration value="03"/>
+																		<xs:enumeration value="04"/>
+																		<xs:enumeration value="05"/>
+																		<xs:enumeration value="11"/>
+																		<xs:enumeration value="12"/>
+																		<xs:enumeration value="13"/>
+																		<xs:enumeration value="14"/>
+																		<xs:enumeration value="15"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="ПрНеустанЛицо" use="optional">
+													<xs:annotation>
+														<xs:documentation>Признак умершего лица, личность которого не установлена</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="fnst:digits-1">
+															<xs:enumeration value="1"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="Пол" use="optional">
+													<xs:annotation>
+														<xs:documentation>Пол</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="fnst:digits-1">
+															<xs:enumeration value="1"/>
+															<xs:enumeration value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="СведДокСмерт" type="fnst:СведДокТип">
+											<xs:annotation>
+												<xs:documentation>Сведения о документе, подтверждающем факт смерти</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СведИспрАГС" type="fnst:СведИзмАГСТип" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о внесенных исправлениях и изменениях в запись акта о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="СведВосстанАГС" type="fnst:СведИзмАГСТип" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Сведения о восстановлении записи акта о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="СведАннулирАГС" type="fnst:СведИзмАГСТип" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Сведения об аннулировании записи акта о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:choice>
+								<xs:element name="СведЗаявительЮЛ">
+									<xs:annotation>
+										<xs:documentation>Сведения о заявителе - юридическом лице</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="СведПредстОрг" type="fnst:СвЗаявительФЛТип">
+												<xs:annotation>
+													<xs:documentation>Сведения о представителе организации</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+										<xs:attribute name="НаимОрг" type="fnst:string-1000" use="required">
+											<xs:annotation>
+												<xs:documentation>Наименование организации</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="АдрОрг" type="fnst:string-255" use="optional">
+											<xs:annotation>
+												<xs:documentation>Адрес организации</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="СведЗаявительФЛ" type="fnst:СвЗаявительФЛТип">
+									<xs:annotation>
+										<xs:documentation>Сведения о заявителе - физическом лице</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:choice>
+						</xs:sequence>
+						<xs:attribute name="НомерЗапис" type="fnst:string-22" use="required">
+							<xs:annotation>
+								<xs:documentation>Номер записи акта о смерти</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ДатаЗапис" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата составления записи акта о смерти</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="НомерВерс" type="fnst:string-1_3" use="required">
+							<xs:annotation>
+								<xs:documentation>Номер версии записи</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ДатаВерс" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата версии записи</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдСвед" type="fnst:ИдЗапросТип" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор сведений, сформированный поставщиком</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ДатаСвед" type="xs:date" use="required">
+				<xs:annotation>
+					<xs:documentation>Дата, на которую сформированы сведения</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FATALOIVResponse">
+		<xs:annotation>
+			<xs:documentation>Ответ на запрос сведений о записях актов о смерти</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="ИдСвед" type="fnst:ИдЗапросТип" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор сведений, сформированный поставщиком</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="КодОбр" use="required">
+				<xs:annotation>
+					<xs:documentation>Код обработки запроса</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="fnst:string-2">
+						<xs:enumeration value="01"/>
+						<xs:enumeration value="02"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

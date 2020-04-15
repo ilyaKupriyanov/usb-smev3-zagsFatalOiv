@@ -1,0 +1,66 @@
+<Request>
+    <Registry>
+        <RegistryRecord>
+            <RecordId>12345</RecordId>
+            <Record><Id>ID_1</Id>
+                <RecordContent><Id>ID_2</Id>
+                    <FATALOIVRequest><DataSved>2019-03-13</DataSved><IdSved>a</IdSved>
+                        <SvedRegSmertOIV><DataVers>2018-12-15</DataVers><DataZapis>2018-12-15</DataZapis><NomerVers>1</NomerVers><NomerZapis>111111111111111111111</NomerZapis>
+                            <OrganZAGS><KodZAGS>R0000000</KodZAGS><NaimZAGS>Федеральное Управление ЗАГС</NaimZAGS></OrganZAGS>
+                            <StatusZapisi><DataNachStatus>2019-03-13</DataNachStatus><KodStatus>01</KodStatus><NaimStatus>запись акта первичная</NaimStatus></StatusZapisi>
+                            <PrdSvedReg>
+                                <SvedUmer><Pol>1</Pol>
+                                    <FIOUmer>
+                                        <Familiya>Иванов</Familiya>
+                                        <Imya>Иван</Imya>
+                                        <Otchestvo>Иванович</Otchestvo>
+                                    </FIOUmer>
+                                    <DataRozhdKalend>1950-12-13</DataRozhdKalend>
+                                    <MestoRozhden><Gorod>Уфа</Gorod><KodStrany>643</KodStrany><MestoTekst>Российская Федерация г. Уфа, ул. Ленина, д. 1, кв. 1</MestoTekst><NaimStrany>Российская Федерация</NaimStrany><NaimSubekt>Республика Башкортостан</NaimSubekt><PriznMesto>1</PriznMesto><Region>02</Region></MestoRozhden>
+                                    <Grazhdanstvo><NaimStrany>Российская Федерация</NaimStrany><OKSM>643</OKSM></Grazhdanstvo>
+                                    <AdrMZH>
+                                        <AdrMZHRF><AdrRFTekst>Российская Федерация г. Уфа, ул. Ленина, д. 1, кв. 1</AdrRFTekst><PrTipAdrRF>1</PrTipAdrRF>
+                                            <AdrKLADR><Gorod>Уфа</Gorod><Dom>1</Dom><Indeks>111111</Indeks><Kvart>1</Kvart><KodRegion>02</KodRegion><Korpus>1</Korpus><NaimRegion>Республика Башкортостан</NaimRegion><Ulica>Ленина</Ulica></AdrKLADR>
+                                        </AdrMZHRF>
+                                    </AdrMZH>
+                                    <DataSmertKalend>2018-12-14</DataSmertKalend>
+                                    <VremyaSmert>09:00:00</VremyaSmert>
+                                    <MestoSmert><Gorod>Уфа</Gorod><KodStrany>643</KodStrany><MestoTekst>Российская Федерация г. Уфа, ул. Ленина, д. 1, кв. 1</MestoTekst><NaimStrany>Российская Федерация</NaimStrany><NaimSubekt>Республика Башкортостан</NaimSubekt><PriznMesto>1</PriznMesto><Region>02</Region></MestoSmert>
+                                    <Nacionalnost>001</Nacionalnost>
+                                    <SemPolozh>01</SemPolozh>
+                                    <Obrazovanie>01</Obrazovanie>
+                                    <Zanyatost>01</Zanyatost>
+                                    <UdLichnFL><VydDok>a</VydDok><DataDok>1957-08-13</DataDok><KodVidDok>21</KodVidDok><NaimDok>Паспорт гражданина Российской Федерации</NaimDok><SerNomDok>55</SerNomDok></UdLichnFL>
+                                    <MestoNastSmert>01</MestoNastSmert>
+                                    <ObstoyatSmert>01</ObstoyatSmert>
+                                    <PrSrokSmertDTP>1</PrSrokSmertDTP>
+                                    <LicoPrichSmert>01</LicoPrichSmert>
+                                    <PrSvedVrach>1</PrSvedVrach>
+                                    <OsnPrichSmert>01</OsnPrichSmert>
+                                    <SvedPrichSmert><Zabolevanie>01</Zabolevanie>
+                                        <SvPrichSmertMKB><KodPrichSmert>G93.6</KodPrichSmert><PrichSmert>отек головного мозга</PrichSmert></SvPrichSmertMKB>
+                                    </SvedPrichSmert>
+                                </SvedUmer>
+                                <SvedDokSmert><DataDok>2017-08-13</DataDok><KodDok>17002</KodDok><NaimDok>Медицинское свидетельство о смерти</NaimDok><SerNomDok>аааа</SerNomDok></SvedDokSmert>
+                            </PrdSvedReg>
+                            <SvedZayavitelFL>
+                                <FIOZayavitel>
+                                    <Familiya>Иванова</Familiya>
+                                    <Imya>Инна</Imya>
+                                    <Otchestvo>Петровна</Otchestvo>
+                                </FIOZayavitel>
+                                <AdrMZH>
+                                    <AdrMZHRF><AdrRFTekst>Российская Федерация г. Уфа, ул. Ленина, д. 1, кв. 1</AdrRFTekst><PrTipAdrRF>1</PrTipAdrRF>
+                                        <AdrKLADR><Gorod>Уфа</Gorod><Dom>1</Dom><Indeks>111111</Indeks><Kvart>1</Kvart><KodRegion>02</KodRegion><Korpus>1</Korpus><NaimRegion>Республика Башкортостан</NaimRegion><Ulica>Ленина</Ulica></AdrKLADR>
+                                    </AdrMZHRF>
+                                </AdrMZH>
+                                <UdLichnFL><VydDok>a</VydDok><DataDok>1957-08-13</DataDok><KodVidDok>21</KodVidDok><NaimDok>Паспорт гражданина Российской Федерации</NaimDok><SerNomDok>55</SerNomDok></UdLichnFL>
+                            </SvedZayavitelFL>
+                        </SvedRegSmertOIV>
+                    </FATALOIVRequest>
+                </RecordContent>
+            </Record>
+            <RecordSignature><Signature><SignedInfo><CanonicalizationMethod><Algorithm>http://www.w3.org/2001/10/xml-exc-c14n#</Algorithm></CanonicalizationMethod><SignatureMethod><Algorithm>http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411</Algorithm></SignatureMethod><Reference><URI>#ID_1</URI><Transforms><Transform><Algorithm>http://www.w3.org/2001/10/xml-exc-c14n#</Algorithm></Transform><Transform><Algorithm>urn://smev-gov-ru/xmldsig/transform</Algorithm></Transform></Transforms><DigestMethod><Algorithm>http://www.w3.org/2001/04/xmldsig-more#gostr3411</Algorithm></DigestMethod><DigestValue>8L9CEocU5jIdqLJyboFzBEjHK1NKXoqLb0HeZa7AOU0=</DigestValue></Reference></SignedInfo><SignatureValue>C4CnwsCNEPdjZOtN34sPeoeen+cJpKhF7jK9tJq8tqh+Um/VDOs4/C3JmaGFCxForKsfDUyXMy1UZXOJ5NbYbg==</SignatureValue><KeyInfo><X509Data><X509Certificate>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</X509Certificate></X509Data></KeyInfo></Signature></RecordSignature>
+        </RegistryRecord>
+    </Registry>
+</Request>

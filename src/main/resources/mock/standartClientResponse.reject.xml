@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Envelope xmlns="urn:usb-ru:standard-client:client2usb:1.0">
+    <Header>
+        <RoutingInformation>
+            <EnvelopeID>0c15307f-1496-45d8-98df-3a0e55dfe61d</EnvelopeID>
+            <PreparationDateTime>2016-03-30T12:24:28.472+03:00</PreparationDateTime>
+            <SenderInformation>jms:queue:test</SenderInformation>
+            <ReceiverInformation>jms:queue:client2usbQueue</ReceiverInformation>
+        </RoutingInformation>
+        <ContentInformation>
+            <ContentID>68093bc9-e514-4640-a13a-ec0140af3e56</ContentID>
+            <RefContentID>originalMessageId</RefContentID>
+            <MessageKind>REJECT.56bd4722-53d4-11ea-8d77-2e728ce88125</MessageKind>
+            <ProcessingType>PROD</ProcessingType>
+        </ContentInformation>
+    </Header>
+    <Body>
+	    <ns1:emptyData xmlns:ns1="urn://111"></ns1:emptyData>
+    </Body>
+    <Attachments>
+    </Attachments>
+</Envelope>
